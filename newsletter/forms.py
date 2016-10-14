@@ -18,8 +18,8 @@ class SignUpForm(forms.ModelForm):
 		# validation code for cleaning email
 		email_base, provider = email.split("@")
 		domain, extention = provider.split('.')
-		if not domain == "sjsu":
-			raise forms.ValidationError("Please use a SJSU email address")
+		#if not domain == "sjsu":
+		#	raise forms.ValidationError("Please use a SJSU email address")
 
 		if not extention == "edu":
 			raise forms.ValidationError("Please use a valid .EDU email address")
