@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from .forms import SignUpForm
+from .forms import ContactForm, SignUpForm
 
 # Create your views here.
 def home(request):
@@ -29,3 +29,34 @@ def home(request):
 		# print instance.timestamp	 
 
 	return render(request, "home.html", context)
+
+# defining a view for contactform
+
+def contact(request):   # this is a way to deal with form wihtout using any model
+
+	form = ContactForm(request.POST or None)
+	if form.is_valid():
+		#print form.cleaned_data   # can not put form.save as above cause this is not a model,
+		# this is just a simple form
+
+		# email = form.cleaned_data.get("email")
+		# message = form.cleaned_data.get("message")
+		# full_name = form.cleaned_data.get("full_name")
+
+		# print email, message, full_name
+
+		# for key in form.cleaned_data:
+		# 	print key
+		# 	print form.cleaned_data.get(key)
+
+		#simpler form than above
+
+		for key, value in form.cleaned_data.iteritems():
+			print key, value
+
+
+	context = {
+		"form" : form
+	}
+
+	return render(request, "forms.html", context)
