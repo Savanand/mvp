@@ -1,4 +1,6 @@
+from django.conf import settings #if to import something from settings.py
 from django.shortcuts import render
+from django.core.mail import send_mail
 
 from .forms import ContactForm, SignUpForm
 
@@ -39,11 +41,22 @@ def contact(request):   # this is a way to deal with form wihtout using any mode
 		#print form.cleaned_data   # can not put form.save as above cause this is not a model,
 		# this is just a simple form
 
-		# email = form.cleaned_data.get("email")
-		# message = form.cleaned_data.get("message")
-		# full_name = form.cleaned_data.get("full_name")
+		form_email = form.cleaned_data.get("email")
+		form_message = form.cleaned_data.get("message")
+		form_full_name = form.cleaned_data.get("full_name")
 
 		# print email, message, full_name
+
+		subject = 'Site contact form'
+		from_email = settings.EMAIL_HOST_USER
+		to_email = [from_email, 'aniketpsavanand@gmail.com']
+		contact_message = """
+		%s: %s via %s
+		"""%(form_full_name, form_message, form_email)
+
+		send_mail(subject, contact_message, from_email, to_email, fail_silently=True)
+
+		#fail_silently make it true if we want to save our data in the database permanently other wise keep it false
 
 		# for key in form.cleaned_data:
 		# 	print key
@@ -51,8 +64,8 @@ def contact(request):   # this is a way to deal with form wihtout using any mode
 
 		#simpler form than above
 
-		for key, value in form.cleaned_data.iteritems():
-			print key, value
+		# for key, value in form.cleaned_data.iteritems():
+		# 	print key, value
 
 
 	context = {

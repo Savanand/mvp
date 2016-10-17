@@ -27,6 +27,13 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# adding below information to send email via Django using gmail.
+
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_HOST_USER = "anikeyt.savanand@gmail.com"
+EMAIL_HOST_PASSWORD = "aniket123"
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
 
 # Application definition
 
