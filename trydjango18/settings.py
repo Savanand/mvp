@@ -43,7 +43,7 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
+    'django.contrib.staticfiles',   # to server static files to django
     'newsletter',
 )
 
@@ -108,3 +108,27 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+
+#STATIC_ROOT = "/var/www/example.com/static/"  # its gonna be served when we go live
+
+#STATIC_ROOT= os.path.join(BASE_DIR, "static_in_pro", "static_root")  # where we gonna collect our static files 
+#(this location in live env would be probably outside our server, another server)
+
+#2nd step to put these static files in static_in_env/static_root folder outside our project 
+
+STATIC_ROOT= os.path.join(os.path.dirname(BASE_DIR), "static_in_env", "static_root")
+
+STATICFILES_DIRS = (            #where we put our files in our project
+    os.path.join(BASE_DIR, "static_in_pro", "our_static"),
+#   os.path.join(BASE_DIR, "static_in_env"),
+#    '/var/www/static/',
+)
+
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_in_env", "media_root")
+
+# media files from end users/team like profile pictures etc to be saved outside the project location
+
+
+#PROTECTED MEDIA if you want to serve it only occasionally
