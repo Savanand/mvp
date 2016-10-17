@@ -15,7 +15,7 @@ urlpatterns = [
 #+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)  # we dont want to this in production/ only in developement
 
 
-if settings.DEBUG:   /#if true we are in developement env 
+if settings.DEBUG:   #if true we are in developement env 
 	urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 	urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)  	
 

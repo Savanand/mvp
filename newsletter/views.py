@@ -30,7 +30,7 @@ def home(request):
 		# print instance.email
 		# print instance.timestamp	 
 
-	return render(request, "home.html", context)
+	return render(request, "base.html", context)
 
 # defining a view for contactform
 
