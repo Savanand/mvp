@@ -35,7 +35,7 @@ def home(request):
 # defining a view for contactform
 
 def contact(request):   # this is a way to deal with form wihtout using any model
-
+	title = 'Contact Us'
 	form = ContactForm(request.POST or None)
 	if form.is_valid():
 		#print form.cleaned_data   # can not put form.save as above cause this is not a model,
@@ -69,7 +69,8 @@ def contact(request):   # this is a way to deal with form wihtout using any mode
 
 
 	context = {
-		"form" : form
+		"form" : form,
+		"title" : title,
 	}
 
 	return render(request, "forms.html", context)
