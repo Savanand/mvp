@@ -1,4 +1,5 @@
-## Django project
+# MVP website
 
-#### Working with MVC project with Django
-#### Creating a useful website with Django Developement Environment
+###### Building django powered website
+###### This website allows users to register, log-in, view pages.
+###### Includes inbuilt registration, authentication
