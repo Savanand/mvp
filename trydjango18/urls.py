@@ -13,6 +13,7 @@ urlpatterns = [
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^accounts/', include('registration.backends.default.urls')),
 ] 
 #+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)  # we dont want to this in production/ only in developement
 

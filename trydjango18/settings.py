@@ -39,6 +39,8 @@ EMAIL_USE_TLS = True
 
 INSTALLED_APPS = (
     'django.contrib.admin',
+    'django.contrib.sites',
+    'registration',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -134,5 +136,14 @@ MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_in_env", "media_roo
 
 #PROTECTED MEDIA if you want to serve it only occasionally
 
-
+#Crispy forms settings 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
+
+#django registration redux setting
+ACCOUNT_ACTIVATION_DAYS = 7
+REGISTRATION_AUTO_LOGIN = True
+REGISTRATION_EMAIL_HTML = True
+
+#for registration via django registration redux
+SITE_ID = 1
+LOGIN_REDIRECT_URL = '/'
