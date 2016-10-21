@@ -2,23 +2,25 @@
 {% load crispy_forms_tags %}
 
 {% block head_title %} Welcome | {{ block.super }} {% endblock %}
-{% block jumbotron %}   
 
-	{{ block.super }}
+	{% block jumbotron %}   
 
-	Hi
+		{{ block.super }}
 
- {% endblock %}
+	
+
+	 {% endblock %}
+	
 <!-- {{ user }}
-{{ request.user }}
+{{ request.user }}	
  -->
 
 {% block content %}
 
 <div class="row">
-  <div class="col-sm-6 col-md-3"> 
+  <div class="col-sm-3 pull-right"> 
 
-		<h1>{{ title }}</h1>
+		<p class="lead">{{ title }}</p>
 		<form method="POST" action="">{% csrf_token %}
 		<!-- {{ form.as_p }} -->
 		{{ form|crispy }}
@@ -26,6 +28,15 @@
 		 -->
 		<input class='btn btn-primary' type="submit" name="" value="Sign Up">
 		</form>
+	</div>
+	<div class="col-sm-3">
+		<p class="lead">Built with Django &amp; Bootstrap</p>
+	</div>
+	<div class="col-sm-3">
+		<p class="lead">Created for starters of all kinds</p>
+	</div>
+	<div class="col-sm-3">
+		<p class="lead">Always Open Source</p>
 	</div>
 </div>
 
