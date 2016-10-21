@@ -11,7 +11,16 @@
     <link rel="icon" href="../../favicon.ico">
 
     <title>{% block head_title %} MVP Landing {% endblock %}</title>
-     {% include 'head_css.html' %} 
+    
+    {% include 'head_css.html' %} 
+    
+    <style type="text/css">
+      {% block style %}
+
+
+      {% endblock %}
+    </style>
+
    </head>
 
   <body>

@@ -3,13 +3,19 @@
 
 {% block head_title %} Welcome | {{ block.super }} {% endblock %}
 
-	{% block jumbotron %}   
+<style type="text/css">
+{% block style %}
 
-		{{ block.super }}
+{% endblock %}
+</style>
 
-	
 
-	 {% endblock %}
+
+
+{% block jumbotron %}   
+
+	{{ block.super }}
+{% endblock %}
 	
 <!-- {{ user }}
 {{ request.user }}	
@@ -20,7 +26,7 @@
 <div class="row">
   <div class="col-sm-3 pull-right"> 
 
-		<p class="lead">{{ title }}</p>
+		<p class="lead text-align-center">{{ title }}</p>
 		<form method="POST" action="">{% csrf_token %}
 		<!-- {{ form.as_p }} -->
 		{{ form|crispy }}
@@ -30,13 +36,13 @@
 		</form>
 	</div>
 	<div class="col-sm-3">
-		<p class="lead">Built with Django &amp; Bootstrap</p>
+		<p class="lead text-align-center">Built with Django &amp; Bootstrap</p>
 	</div>
 	<div class="col-sm-3">
-		<p class="lead">Created for starters of all kinds</p>
+		<p class="lead text-align-center">Created for starters of all kinds</p>
 	</div>
 	<div class="col-sm-3">
-		<p class="lead">Always Open Source</p>
+		<p class="lead text-align-center">Always Open Source</p>
 	</div>
 </div>
 
