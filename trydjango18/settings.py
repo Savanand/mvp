@@ -44,7 +44,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',   # to server static files to django
-    'newsletter',
+    'crispy_forms',  #3rd party apps
+    'newsletter',   #my apps
 )
 
 MIDDLEWARE_CLASSES = (
@@ -132,3 +133,6 @@ MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_in_env", "media_roo
 
 
 #PROTECTED MEDIA if you want to serve it only occasionally
+
+
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
