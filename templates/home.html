@@ -50,9 +50,24 @@
   <h1>You are logged in!</h1>
 
 <!-- {{ request.user.is_staff }} -->
-{{ queryset }}
+		{% if queryset %}
+			<h1>Welcome Staff</h1>
+			<table class="table">
+			{% for instance in queryset %}
+				<tr>
+					<td>{{ forloop.counter }}</td>
+					<td>{{ instance }}</td>
+					<td>{{ instance.full_name }} </td>
+					<td>{{ instance.timestamp | timesince }} ago</td>
+				</tr>
+			{% endfor %}
+			</table>
+		{% endif %} 
+
 
  {% else %}
+
+
 
 <div class="row">
   <div class="col-sm-3 pull-right"> 
