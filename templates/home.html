@@ -19,12 +19,14 @@
 
 
 {% block jumbotron %}
+ {% if not request.user.is_authenticated %}
+
 <div class="jumbotron">  
     <div class="container">
 	 	<div class="row">
 	        <div class="col-sm-6">
-	           	<h1>MVP Project</h1>
-	           	<p>The MVP landing project is  designed to get your project started. The goal is to keep you 		launch as soon as possible 
+	           	<h1>Promote Digital</h1>
+	           	<p>The MVP landing project is designed to get your promotions started. The goal is to keep you 		launch as soon as possible 
 	             with the least amount of investement using time or money. Join us today</p>
 	           	<p>
 	           	<a class="btn btn-lg btn-primary" href="" role="button">Join Us &raquo;</a>
@@ -37,13 +39,20 @@
 	    </div>
     </div>
 </div>  
-{% endblock %}
-	
+{% endif %}
+{% endblock %}	
 <!-- {{ user }}
 {{ request.user }}	
  -->
 
 {% block content %}
+ {% if request.user.is_authenticated %}
+  <h1>You are logged in!</h1>
+
+<!-- {{ request.user.is_staff }} -->
+{{ queryset }}
+
+ {% else %}
 
 <div class="row">
   <div class="col-sm-3 pull-right"> 
@@ -58,11 +67,11 @@
 		</form>
 	</div>
 	<div class="col-sm-3">
-		<p class="lead text-align-center">Built with Django &amp; Bootstrap</p>
+		<p class="lead text-align-center">Django &amp; Bootstrap</p>
 		<img src="{% static 'img/june-brasstown-bald.jpeg' %}" class="img-responsive">
 	</div>
 	<div class="col-sm-3">
-		<p class="lead text-align-center">Created for starters of all kinds<br><br>
+		<p class="lead text-align-center">Created for starters<br><br>
  				<span class="fa-stack fa-lg fa-3x">
 					<i class="fa fa-comment-o fa-2x fa-fw  fa-stack-2x "></i>
 					<i style='color: orange;' class="fa fa-bolt fa-1x" aria-hidden="true"></i>
@@ -75,7 +84,7 @@
 			<span class="sr-only">Loading...</span>
  -->		
  				<span class="fa-stack fa-lg fa-3x">
-					<i class="fa fa-circle-o-notch fa-spin fa-2x fa-fw  fa-stack-2x "></i>
+					<i class="fa fa-circle-o-notch fa-2x fa-fw  fa-stack-2x "></i>
   					<i class="fa fa-github" fa-stack-1x aria-hidden="true"></i>
 <!--   					<i class="fa fa-twitter fa-stack-1x"></i>
  -->				</span>
@@ -85,5 +94,5 @@
  -->
 	</div>
 </div>
-
+ {% endif %}
 {% endblock %}			

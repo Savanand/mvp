@@ -7,7 +7,7 @@ from .forms import ContactForm, SignUpForm
 # Create your views here.
 def home(request):
 	form = SignUpForm(request.POST or None)
-	title = "Welcome Guest"  # view function variable
+	title = "Sign up now"  # view function variable
 	# if request.user.is_authenticated():
 	# 	title = "My Title. Welcome %s" %(request.user)
 
@@ -30,6 +30,10 @@ def home(request):
 		# print instance.email
 		# print instance.timestamp	 
 
+	if request.user.is_authenticated() and request.user.is_staff:
+		context = {
+			"queryset" : [123, 456]
+		}	
 	return render(request, "home.html", context)
 
 # defining a view for contactform
