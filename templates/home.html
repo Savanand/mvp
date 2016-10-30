@@ -5,26 +5,34 @@
 
 <style type="text/css">
 {% block style %}
-
+.navbar-static-top{
+	margin-bottom: 0px !important;
+}
+.jumbotron{
+	background-color: #0C3C26;
+	color: #FFF;
+}
 {% endblock %}
 </style>
 
 
 
 {% block jumbotron %}
-<div class="jumbotron">   
- 	<div class="row">
-         <div class="col-sm-6">
-            <h1>MVP Project</h1>
-            <p>The MVP landing project is  designed to get your project started. The goal is to keep you launch as soon as possible 
-             with the least amount of investement using time or money. Join us today</p>
-            <p>
-                <a class="btn btn-lg btn-primary" href="" role="button">Join Us &raquo;</a>
-            </p>
-         </div>
-         <div class="col-sm-6" style="background-color:black; height:300px;">
+<div class="jumbotron">  
+    <div class="container">
+	 	<div class="row">
+	         <div class="col-sm-6">
+	            <h1>MVP Project</h1>
+	            <p>The MVP landing project is  designed to get your project started. The goal is to keep you launch as soon as possible 
+	             with the least amount of investement using time or money. Join us today</p>
+	            <p>
+	                <a class="btn btn-lg btn-primary" href="" role="button">Join Us &raquo;</a>
+	            </p>
+	         </div>
+	         <div class="col-sm-6" style="background-color:black; height:300px;">
 
-         </div> 
+	         </div> 
+	    </div>
     </div>
 </div>  
 {% endblock %}
