@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
+{% load staticfiles %}
 
 {% block head_title %} Welcome | {{ block.super }} {% endblock %}
 
@@ -21,17 +22,18 @@
 <div class="jumbotron">  
     <div class="container">
 	 	<div class="row">
-	         <div class="col-sm-6">
-	            <h1>MVP Project</h1>
-	            <p>The MVP landing project is  designed to get your project started. The goal is to keep you launch as soon as possible 
+	        <div class="col-sm-6">
+	           	<h1>MVP Project</h1>
+	           	<p>The MVP landing project is  designed to get your project started. The goal is to keep you 		launch as soon as possible 
 	             with the least amount of investement using time or money. Join us today</p>
-	            <p>
-	                <a class="btn btn-lg btn-primary" href="" role="button">Join Us &raquo;</a>
-	            </p>
-	         </div>
-	         <div class="col-sm-6" style="background-color:black; height:300px;">
-
-	         </div> 
+	           	<p>
+	           	<a class="btn btn-lg btn-primary" href="" role="button">Join Us &raquo;</a>
+	        	</p>
+	        </div>
+	        <div class="col-sm-6">
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/2WhQcK-Zaok" frameborder="0" allowfullscreen></iframe>
+<!-- 				<img src="https://www.homeaway.com/info/files/live/sites/ha/files/shared/Destinations/georgia/12-weekend-destinations-from-atlanta/june-brasstown-bald.jpeg" class="img-responsive">
+ -->	         </div> 
 	    </div>
     </div>
 </div>  
@@ -57,12 +59,16 @@
 	</div>
 	<div class="col-sm-3">
 		<p class="lead text-align-center">Built with Django &amp; Bootstrap</p>
+		<img src="{% static 'img/june-brasstown-bald.jpeg' %}" class="img-responsive">
 	</div>
 	<div class="col-sm-3">
 		<p class="lead text-align-center">Created for starters of all kinds</p>
+		<img src="{% static 'img/tunnels_beach_kauai.jpg' %}" class="img-responsive">
 	</div>
 	<div class="col-sm-3">
 		<p class="lead text-align-center">Always Open Source</p>
+		<img src="{% static 'img/golden_gate.jpg' %}" class="img-responsive">
+
 	</div>
 </div>
 
